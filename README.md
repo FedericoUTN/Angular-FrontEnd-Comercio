@@ -20,7 +20,7 @@ Los productos van a tener asociado una clase débil para almacenar el precio y l
 Los usuarios de la página web serán de dos tipos, el Cliente y el Administrador
 
 El Administrador tendrá las capacidades de crear, modificar y eliminar las siguientes entidades
-	* Categorías
+ * Categorías
  * Productos
  * Precios
 	
