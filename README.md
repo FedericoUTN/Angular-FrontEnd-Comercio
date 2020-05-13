@@ -60,17 +60,17 @@ Categorias (independientes)
 
 ## Listados
 
- * Listado de los Productos por Categoría (Simple)
+ * Listado de los Productos con filtrados por Categoría (Complejo)
  * Listar los Productos con el stock disponible, su detalle , precio y categoría a la cual pertenece (Complejo)
- * Listado de los datos del carrito (Nombre de los productos, Precios de cada producto, Precio envio y Precio Final) (Complejo)
+ * Listado de los clientes (Simple)
 
 ## Detalles
 
- * Producto : Tipo de Producto, Precio
-* Carrito : Línea de Producto 
+ * Persona : Direccion, email y Compras realizadas
+* Producto : detalle particular de cada producto 
 	
 ## Modelo de dominio
 
-	https://app.diagrams.net/#G1kSK_ERzIZNSvalpdNPq2WalKDi_JEu-w
+[MD.pdf](./Modelo%20de%20dominio.pdf)
 	
 [checklist]: ./checklist/README.md
