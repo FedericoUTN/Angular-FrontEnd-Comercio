@@ -98,10 +98,12 @@ export class ProductoComponent implements OnInit {
       .subscribe((resp : Producto) => {
         this.producto = resp
         this.producto.id = id
+       
 
       })
     }
-    
+    this.fillProduct()
+    console.log(this.producto);
   }
 
 }

@@ -1,0 +1,56 @@
+<h1>Listado de Clientes</h1>
+<hr>
+<div class="row">
+    <div class="col text-right">
+        <button routerLink="/producto/new" class="btn btn-primary">
+            <li class="fa fa-plus"></li> Nuevo Cliente
+        </button>
+    </div>
+</div>
+<table class="table mt-2 animated fadeIn faster">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Email</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Eliminar/Modificar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cli of clients, let i = index">
+            <th scope="row"></th>
+            <td>{{cli.id}}</td>
+            <td>{{cli.nombre}}</td>
+            <td>{{cli.apellido}}</td>
+            <td>{{cli.telefono}}</td>
+            <td>{{cli.direccion}}</td>
+            <td>{{cli.email}}</td>
+            <td>{{cli.estado}}</td>
+            <td><button class="btn btn-danger"><li class="fas fa-trash"></li></button>
+                <button class="btn btn-secondary ml-1" [routerLink]=""><li class="fas fa-pen"></li></button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+<div class="alert alert-warning text-center mt-3">
+    <h4 class="alert-heading">No hay Clientes</h4>
+    <p>
+        <i class="fa fa-exclamation fa-2x mt-2"></i>
+    </p>
+
+</div>
+<div class="alert alert-info text-center mt-3">
+    <h4 class="alert-heading">Cargando</h4>
+    <p>
+        <i class="fa fa-sync-alt fa-spin fa-3x"></i>
+    </p>
+    <p class="mb-0">
+        Espere porfavor
+    </p>
+</div>

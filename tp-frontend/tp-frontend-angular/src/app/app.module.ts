@@ -7,12 +7,14 @@ import { ProductosComponent } from './productos/productos.component';
 import { ProductoComponent } from './producto/producto.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ClientesComponent } from './clientes/clientes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductosComponent,
-    ProductoComponent
+    ProductoComponent,
+    ClientesComponent
   ],
   imports: [
     BrowserModule,
