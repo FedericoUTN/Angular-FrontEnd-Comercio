@@ -3,9 +3,14 @@ import { TipoProducto } from './TipoProducto';
 
 
 export class Producto {
-    constructor(public nombre : string, public detalle : string,
-        public stock : number, public precio : Precio,
-        public tipoProducto : TipoProducto) {
+    id : string
+    constructor(
+        public nombre : string, 
+        public detalle : string,
+        public stock : number, 
+        public precio : number,     //cambiar a precio : Precio luego
+        public tipoProducto : string  //cambiar a tipoProducto : TipoProducto luego
+        ) {
         
     }
 }

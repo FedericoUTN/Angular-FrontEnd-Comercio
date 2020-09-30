@@ -1,0 +1,52 @@
+<h1>Crear/Modificar Producto</h1>
+<hr>
+<div class="row text-right">
+    <div class="col">
+        <button routerLink='/productos' class="btn btn-danger">
+            <i class="fas fa-long-arrow-alt-left"></i>
+        </button>
+    </div>
+</div>
+<h3>Buscar Producto</h3>
+<label class="mt-2">ID Producto <input type="text" [formControl]='idProducto'>
+   <button class="btn btn-primary ml-2" (click)='buscarProducto()'>
+       <i class="fas fa-search"></i> Buscar
+    </button> 
+</label>
+<p> test% valor id = {{idProducto.value}}</p>
+<hr>
+<h3>Producto</h3>
+<div class="row align-content-center">
+    <div class="col">
+        <form [formGroup]='newProduct' (ngSubmit)='onSubmit()'>
+            <div class="form-group">
+                <label>Database ID</label>
+                <input name='id' type="text" formControlName='productId' class="form-control" placeholder="{{producto.id}}" disabled='disabled'>
+                <small class="form-text text-muted">Campo autogenerado por Firebase</small>
+
+            </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input name='nombre' type="text" formControlName='productName' class="form-control" required value="{{producto.nombre}}">
+            </div>
+            <div class="form-group">
+                <label>Detalle</label>
+                <input type="text" formControlName='productDetail' class="form-control" required value="{{producto.detalle}}">
+            </div>
+            <div class="form-group">
+                <label>Stock</label>
+                <input type="text" formControlName='productStock' class="form-control" required value="{{producto.stock}}">
+            </div>
+            <div class="form-group">
+                <label>Precio</label>
+                <input type="text" formControlName='productPrice' class="form-control" required value="{{producto.precio}}">
+            </div>
+            <div class="form-group">
+                <label>Tipo</label>
+                <input type="text" formControlName='productType' class="form-control" value="{{producto.tipoProducto}}">
+            </div>
+            <button class="btn btn-primary w-25" type="submit" [disabled]='!newProduct.valid'><i class="fas fa-save"></i> Guardar</button>
+            <button class="btn btn-info w-25 ml-2" (click)='reset()'><i class="fas fa-trash"></i> Reset</button>
+        </form>
+    </div>
+</div>

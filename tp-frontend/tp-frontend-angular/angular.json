@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tp-frontend-angular"
+    }
+  },
+  "defaultProject": "tp-frontend-angular",
+  "cli": {
+    "analytics": "77c83a7f-7c7f-4297-aec7-28e1f055322d"
+  }
 }

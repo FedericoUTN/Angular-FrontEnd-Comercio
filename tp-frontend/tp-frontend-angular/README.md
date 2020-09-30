@@ -1,27 +1,76 @@
-# TpFrontendAngular
+# TP Backend 2020
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
+## Integrantes
 
-## Development server
+Federico Ruiz, 43904
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Federico Vallejos, 41886
 
-## Code scaffolding
+## Enunciado general
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+El sistema que vamos a desarrollar es una tienda online de venta de componentes de computación e insumos relacionados. El sistema está pensado para una tienda particular ubicada en Rosario. 
 
-## Build
+Los productos poseen lo siguientes datos
+	* Nombre
+	* Detalle
+	* Stock
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Los productos van a tener asociado una clase débil para almacenar el precio y llevar un histórico y una clase categoría, en la que un producto puede estar en varias categorías y una categoría puede tener varios productos.
 
-## Running unit tests
+Los usuarios de la página web serán de dos tipos, el Cliente y el Administrador
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+El Administrador tendrá las capacidades de crear, modificar y eliminar las siguientes entidades
+ * Categorías
+ * Productos
+ * Precios
+	
+También tendrá que actualizar el estado de la orden de compra según en qué estado se encuentre (En Preparación, Envio, Finalizado).
 
-## Running end-to-end tests
+El Cliente tendrá las facultades de ver los productos (detalles) y crear un carrito (con su listado de productos) y comprarlos, del stock de productos lo tomamos como que existen proveedores que enviaran productos para llenar el mismo, pero no se modeliza para no añadir tanta complejidad.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Para realiza una compra, el Cliente mirara los productos de un listado ordenado por categoría y filtros (precio), selecciona el producto(si hay stock), cantidad del mismo y confirma, esa línea de productos se agregaran al carrito, se añadirá una opción de envió con su costo, luego se actualizará el precio total (productos x cantidad + envio), y si el Cliente acepta, se podrá confirmar la compra ingresando los datos (método de pago, datos personales), se generará entonces una orden de compra que el Cliente podrá consultar.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## ABMC
+
+Clientes (Dependiente)
+ * nombre
+ * apellido
+ * teléfono
+ * dirección
+  	* calle
+  	* número
+  	* código postal
+		* ciudad
+		* provincia	
+ * email
+ * estado
+
+Productos (Dependiente)
+ * nombre producto
+ * detalle
+ * stock
+ * categorías
+ * precio actual
+
+Categorias (independientes)
+
+ * Id categoria
+ * descripcion
+
+## Listados
+
+ * Listado de los Productos con filtrados por Categoría (Complejo)
+ * Listar los Productos con el stock disponible, su detalle , precio y categoría a la cual pertenece (Complejo)
+ * Listado de los clientes (Simple)
+
+## Detalles
+
+ * Persona : Direccion, email y Compras realizadas
+* Producto : detalle particular de cada producto 
+	
+## Modelo de dominio
+
+[MD.pdf](./Modelo%20de%20dominio.pdf)
+	
+[checklist]: ./checklist/README.md
