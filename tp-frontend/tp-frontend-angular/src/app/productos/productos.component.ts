@@ -35,7 +35,10 @@ p = new Precio(50000)
     .subscribe(resp =>{
       this.products = resp
       this.products.forEach(res => {
-        this.listType.push(res.tipoProducto)})
+        if (!this.listType.includes(res.tipoProducto)){
+          this.listType.push(res.tipoProducto)
+        }
+      })
       this.cargando = false
     })
 
