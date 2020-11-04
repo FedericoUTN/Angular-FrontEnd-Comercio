@@ -5,6 +5,7 @@ import { ProductoService } from '../services/producto.service';
 import  Swal  from 'sweetalert2';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { Precio } from 'src/classes/Precio';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./producto.component.scss']
 })
 export class ProductoComponent implements OnInit {
+  p = new Precio(1)
   producto = new Producto('asd', 'asd', 1, 1, '123')
 
   idProducto = new FormControl('')
@@ -87,7 +89,7 @@ export class ProductoComponent implements OnInit {
     this.producto.nombre = this.newProduct.get('productName').value
     this.producto.detalle = this.newProduct.get('productDetail').value
     this.producto.stock = this.newProduct.get('productStock').value
-    this.producto.precio = this.newProduct.get('productPrice').value
+    this.producto.precio =this.newProduct.get('productPrice').value
     this.producto.tipoProducto = this.newProduct.get('productType').value
   }
 

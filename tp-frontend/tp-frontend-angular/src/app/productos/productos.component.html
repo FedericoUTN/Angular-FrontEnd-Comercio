@@ -10,6 +10,26 @@
         </button>
     </div>
 </div>
+<div>
+    <!--<Label>Buscar por Tipo de Producto</Label><input name='stock' type="text" [formControl]="TipoProducto" class="form-control" placeholder="ingrese un tag" style="width: 40% ">
+    <div class="col-auto my-1">
+        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Tipo de Producto</label>
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" [formControl]="TipoProducto" class="form-control">
+          <option selected>Elige...</option>
+          <option value="1">Placa de Video</option>
+          <option value="2">Procesador Intel</option>
+          <option value="3">Memoria Ram</option>
+        </select>
+    </div>-->
+    <Label>Buscar por Tipo de Producto</Label>
+    <select name="" id="" [formControl]="TipoProducto" class="form-control" placeholder="seleccione un tag" style="width: 25% ">
+        <option *ngFor="let type of listType" [ngValue]="type">{{type}}</option>
+    </select>
+    <button (click)='findByTipo(TipoProducto.value)'> Busca</button>
+
+
+
+</div>
 <table class="table mt-2 animated fadeIn faster">
     <thead class="thead-dark">
         <tr>
@@ -23,15 +43,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let prod of products; let i = index">
+        <tr *ngFor="let prod of products; let i = index" class="a" [routerLink]="['/detalle/', prod.id]">
             <th scope="row">{{i + 1}}</th>
             <td>{{prod.id}}</td>
             <td>{{prod.nombre}}</td>
             <td>{{prod.detalle}}</td>
             <td>{{prod.stock}}</td>
-            <td>{{prod.precio | currency}}</td>
+            <td>{{prod.precio | currency}} </td>
             <td><button class="btn btn-danger" (click)='borrarProducto(prod, i)'><li class="fas fa-trash"></li></button>
                 <button class="btn btn-secondary ml-1" [routerLink]="['/producto/', prod.id]"><li class="fas fa-pen"></li></button>
+
             </td>
         </tr>
 

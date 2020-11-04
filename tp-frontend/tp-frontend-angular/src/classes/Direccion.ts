@@ -5,4 +5,7 @@ export class Direccion {
         public codigoPostal : {ciudad : string, provincia : string}) {
         
     }
+    getData(){
+        return `${this.calle} ${this.numero} - ${this.codigoPostal.provincia}, ${this.codigoPostal.ciudad}`
+    }
 }

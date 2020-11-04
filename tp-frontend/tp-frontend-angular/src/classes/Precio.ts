@@ -1,5 +1,10 @@
+
 export class Precio {
-    constructor(public precioHoy : number, public fecha : Date) {
-        
+    constructor(public price : number) {
+}
+fecha = new Date()
+   
+    getDate(){
+        return this.fecha
     }
 }

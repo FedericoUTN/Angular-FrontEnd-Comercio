@@ -1,0 +1,38 @@
+.precio {
+    color: greenyellow
+}
+
+.fill {
+    background-color: #bbb;
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%
+}
+
+.aa {
+    box-sizing: border-box
+}
+
+
+/* [1] The container */
+
+.img-hover-zoom {
+    /* [1.1] Set it as per your need */
+    overflow: hidden;
+    /* [1.2] Hide the overflowing of child elements */
+}
+
+
+/* [2] Transition property for smooth transformation of images */
+
+.img-hover-zoom {
+    transition: transform .5s ease;
+}
+
+
+/* [3] Finally, transforming the image when container gets hovered */
+
+.img-hover-zoom:hover {
+    transform: scale(1.08);
+}

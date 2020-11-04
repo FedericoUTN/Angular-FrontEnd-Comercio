@@ -22,14 +22,15 @@
     </thead>
     <tbody>
         <tr *ngFor="let cli of clients, let i = index">
-            <th scope="row"></th>
+
             <td>{{cli.id}}</td>
             <td>{{cli.nombre}}</td>
             <td>{{cli.apellido}}</td>
             <td>{{cli.telefono}}</td>
-            <td>{{cli.direccion}}</td>
+            <td>{{cli.direccion.getData()}}</td>
             <td>{{cli.email}}</td>
-            <td>{{cli.estado}}</td>
+            <td *ngIf="cli.estado === 'activo'" style="color: rgb(67, 110, 230)">{{cli.estado}}</td>
+            <td *ngIf="!(cli.estado === 'activo')" style="color:red">{{cli.estado}}</td>
             <td><button class="btn btn-danger"><li class="fas fa-trash"></li></button>
                 <button class="btn btn-secondary ml-1" [routerLink]=""><li class="fas fa-pen"></li></button>
             </td>

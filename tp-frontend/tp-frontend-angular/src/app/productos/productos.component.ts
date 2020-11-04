@@ -1,17 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { Precio } from 'src/classes/Precio';
 import { Producto } from 'src/classes/Producto';
 import Swal from 'sweetalert2';
 import { ProductoService } from '../services/producto.service';
+import { of } from 'rxjs';
+
 
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.scss']
+  styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent implements OnInit {
-products : Producto[] = []
-cargando = false
+  TipoProducto = new FormControl('')
 
+  products : Producto[] = []
+  listType : string[] = []
+
+cargando = false
+p = new Precio(50000)
   product : Producto = new Producto('rtx 2060', 'placa de video serie RTX20xx'
   ,5,50000,'placa de video')
 
@@ -20,11 +29,19 @@ cargando = false
   ngOnInit(): void {
     this.cargando = true
 
+   
+
     this.productService.getAllProducts()
     .subscribe(resp =>{
       this.products = resp
+      this.products.forEach(res => {
+        this.listType.push(res.tipoProducto)})
       this.cargando = false
     })
+
+    console.log(this.listType);
+    
+      
       
     
   }
@@ -41,9 +58,21 @@ Swal.fire({
     this.productService.deleteProduct(producto.id).subscribe()
   }
 })
-
-    
   }
   
+  
+  //funciona, devuelve un array con los tipos en el input
+  findByTipo(type : string){
+    
+    console.log(type);
+    
+    this.productService.getByType(type).subscribe(res =>{
+      this.products = res
+    })
+    
+
+  }
+
+
 
 }
